@@ -1,43 +1,43 @@
 import { toArrayResponse, toDataResponse,  } from "@toko-buku/libs/transformers";
 import { errorResponse  } from "@toko-buku/controllers/global";
-import { Admin } from "../models/admin";
+import { Member } from "../models/member";
 
-async function getAdmins(params: any) {
+async function getMembers(params: any) {
   try {
     const res = await fetch(
-      `${process.env.apiRest}/admins`, {cache:"no-store"}
+      `${process.env.apiRest}/members`, {cache:"no-store"}
     );
 
     if (!res.ok) {
-      throw new Error("Failed fetch admins");
+      throw new Error("Failed fetch members");
     }
 
     const response = await res.json()
 
-    return toArrayResponse(Admin, response);
+    return toArrayResponse(Member, response);
   } catch (error) {
-    return toArrayResponse(Admin, { 
+    return toArrayResponse(Member, { 
       ...errorResponse,
       message: error
     }) 
   }
 }
 
-async function getAdmin(id: string) {
+async function getMember(id: string) {
   try {
     const res = await fetch(
-      `${process.env.apiRest}/admins/${id}`, {cache:"no-store"}
+      `${process.env.apiRest}/members/${id}`, {cache:"no-store"}
     );
 
     if (!res.ok) {
-      throw new Error("Failed fetch admin");
+      throw new Error("Failed fetch member");
     }
     
     const response = await res.json()
 
-    return toDataResponse(Admin, response);
+    return toDataResponse(Member, response);
   } catch (error) {
-    return toDataResponse(Admin, { 
+    return toDataResponse(Member, { 
       ...errorResponse,
       message: error
     }) 
@@ -45,10 +45,10 @@ async function getAdmin(id: string) {
 }
 
 
-async function addAdmin(body: any) {
+async function addMember(body: any) {
   try {
     const res = await fetch(
-      `${process.env.apiRest}/admins`, 
+      `${process.env.apiRest}/members`, 
       {
         method: "POST",
         body: JSON.stringify(body),
@@ -56,24 +56,24 @@ async function addAdmin(body: any) {
     );
 
     if (!res.ok) {
-      throw new Error("Failed add admin");
+      throw new Error("Failed add member");
     }
 
     const response = await res.json()
 
-    return toDataResponse(Admin, response);
+    return toDataResponse(Member, response);
   } catch (error) {
-    return toDataResponse(Admin, { 
+    return toDataResponse(Member, { 
       ...errorResponse,
       message: error
     }) 
   }
 }
 
-async function updateAdmin(admin: string, body: any) {
+async function updateMember(member: string, body: any) {
   try {
     const res = await fetch(
-      `${process.env.apiRest}/admins/${admin}`, 
+      `${process.env.apiRest}/members/${member}`, 
       {
         method: "PUT",
         body: JSON.stringify(body),
@@ -81,43 +81,43 @@ async function updateAdmin(admin: string, body: any) {
     );
 
     if (!res.ok) {
-      throw new Error("Failed update admin");
+      throw new Error("Failed update member");
     }
 
     const response = await res.json()
 
-    return toDataResponse(Admin, response);
+    return toDataResponse(Member, response);
   } catch (error) {
-    return toDataResponse(Admin, { 
+    return toDataResponse(Member, { 
       ...errorResponse,
       message: error
     }) 
   }
 }
 
-async function deleteAdmin(admin: string) {
+async function deleteMember(member: string) {
   try {
     const res = await fetch(
-      `${process.env.apiRest}/admins/${admin}`, 
+      `${process.env.apiRest}/members/${member}`, 
       {
         method: "DELETE",
       }
     );
 
     if (!res.ok) {
-      throw new Error("Failed delete admin");
+      throw new Error("Failed delete member");
     }
 
     const response = await res.json()
 
-    return toDataResponse(Admin, response);
+    return toDataResponse(Member, response);
   } catch (error) {
-    return toDataResponse(Admin, { 
+    return toDataResponse(Member, { 
       ...errorResponse,
       message: error
     }) 
   }
 }
 
-export {getAdmins, getAdmin, addAdmin, updateAdmin, deleteAdmin}
+export {getMembers, getMember, addMember, updateMember, deleteMember}
 

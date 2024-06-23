@@ -50,7 +50,7 @@ export default function UsersAddPage() {
         <form onSubmit={onSubmit}>
             <div className="grid gap-16 mb-10 md:grid-cols-2">
               <div className="text-lg">
-                Berikut merupaka form tambah user.
+                Berikut merupakan form tambah user.
                 <br />
                 Isilah data-data yang diperlukan agar dapat menambahkan user kedalam aplikasi.
                 <br />

@@ -55,7 +55,7 @@ export function SidebarComponent() {
           <Sidebar.Item active={pathname.includes('/users')} href="/users" icon={HiUser}>
             Users
           </Sidebar.Item>
-          <Sidebar.Item icon={HiUserGroup}>
+          <Sidebar.Item active={pathname.includes('/members')} href="/members" icon={HiUserGroup}>
             Members
           </Sidebar.Item>
           <Sidebar.Collapse icon={HiShoppingBag} label="Barang">
