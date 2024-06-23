@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
+    "outDir": "./src/libs/",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -18,9 +19,14 @@
       }
     ],
     "paths": {
-      "@toko-buku/*": ["./src/*"]
+      "@toko-buku/*": ["./src/*"],
+      "@toko-buku/components": ["./src/libs/components/index.tsx"],
+      "@toko-buku/transformers": ["./src/libs/transformers/index.tsx"],
+      "@toko-buku/controllers/admin": ["./src/libs/controllers/admin/index.tsx"],
+      "@toko-buku/controllers/global": ["./src/libs/controllers/global/index.tsx"],
+      "assets/*": ["./src/libs/assets/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist", "lib"]
 }
