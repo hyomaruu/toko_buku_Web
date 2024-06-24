@@ -1,7 +1,5 @@
 "use client";
 
-import { unstable_noStore as noStore } from 'next/cache';
-
 import { Sidebar } from "flowbite-react";
 import { usePathname } from 'next/navigation';
 import { useState } from "react";
@@ -14,7 +12,6 @@ import { TbTransactionDollar } from "react-icons/tb";
 
 
 export function SidebarComponent() {
-  noStore();
 
   const [isOpen, openSidebar] = useState<boolean>(false)
   const pathname = usePathname()
@@ -59,8 +56,8 @@ export function SidebarComponent() {
             Members
           </Sidebar.Item>
           <Sidebar.Collapse icon={HiShoppingBag} label="Barang">
-            <Sidebar.Item icon={FaBook}>Buku</Sidebar.Item>
-            <Sidebar.Item icon={GiPencilBrush}>Aksesoris</Sidebar.Item>
+            <Sidebar.Item active={pathname.includes('/books')} href="/books" icon={FaBook}>Buku</Sidebar.Item>
+            <Sidebar.Item active={pathname.includes('/accessories')} href="/accessories" icon={GiPencilBrush}>Aksesoris</Sidebar.Item>
           </Sidebar.Collapse>
           <Sidebar.Item icon={FaShoppingCart} label="3" labelColor="red">
             Keranjang

@@ -5,7 +5,6 @@ import { SidebarComponent } from "@toko-buku/components";
 
 const inter = Inter({ subsets: ["latin"] });
 
-
 export const metadata: Metadata = {
   title: {
     default: "Toko Buku",
@@ -23,7 +22,6 @@ export default function RootLayout({
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       <body className={inter.className}>
-
         <SidebarComponent></SidebarComponent>
         <div className="relative sm:fixed sm:left-64 sm:right-0 px-10">
           <div>

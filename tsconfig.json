@@ -24,6 +24,8 @@
       "@toko-buku/transformers": ["./src/libs/transformers/index.tsx"],
       "@toko-buku/controllers/admin": ["./src/libs/controllers/admin/index.tsx"],
       "@toko-buku/controllers/member": ["./src/libs/controllers/member/index.tsx"],
+      "@toko-buku/controllers/book": ["./src/libs/controllers/book/index.tsx"],
+      "@toko-buku/controllers/accessoris": ["./src/libs/controllers/accessoris/index.tsx"],
       "@toko-buku/controllers/global": ["./src/libs/controllers/global/index.tsx"],
       "assets/*": ["./src/libs/assets/*"]
     }
